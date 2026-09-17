@@ -1,0 +1,7 @@
+import { describe, expect, it } from "vitest";
+import { compareRequirement } from "./comparison";
+import { ParameterDefinition } from "./types";
+
+const numberParameter:ParameterDefinition={id:"p",canonicalKey:"generator.power_kw",labelTr:"Jeneratör gücü",category:"Generator",valueType:"NUMBER",unit:"kW",isCore:true,tenderRelevance:"VERY_HIGH",aliases:[],active:true};
+const booleanParameter:ParameterDefinition={...numberParameter,id:"b",canonicalKey:"imaging.roadmap_fluoroscopy",valueType:"BOOLEAN",unit:undefined};
+describe("compareRequirement",()=>{it("80 kW ≥ 80 kW için compliant döner",()=>expect(compareRequirement({parameterKey:"generator.power_kw",operator:">=",value:80,unit:"kW"},numberParameter,{productId:"x",parameterDefinitionId:"p",numericValue:80,knowledgeStatus:"PM_VERIFIED",updatedAt:""}).status).toBe("COMPLIANT"));it("14 bit ≥ 16 bit için non-compliant döner",()=>expect(compareRequirement({parameterKey:"detector.bit_depth",operator:">=",value:16,unit:"bit"},{...numberParameter,unit:"bit"},{productId:"x",parameterDefinitionId:"p",numericValue:14,knowledgeStatus:"PM_VERIFIED",updatedAt:""}).status).toBe("NON_COMPLIANT"));it("unknown hiçbir zaman non-compliant olmaz",()=>expect(compareRequirement({parameterKey:"imaging.roadmap_fluoroscopy",operator:"=",value:true},booleanParameter,{productId:"x",parameterDefinitionId:"b",knowledgeStatus:"UNKNOWN",updatedAt:""}).status).toBe("UNKNOWN"));});

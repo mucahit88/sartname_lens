@@ -1,0 +1,1 @@
+export default function EvidencePage(){return <div className="mx-auto max-w-[1250px] px-8 py-10"><p className="eyebrow">Evidence</p><h1 className="mt-1 text-2xl font-extrabold">Evidence Library hazırlanıyor</h1></div>}

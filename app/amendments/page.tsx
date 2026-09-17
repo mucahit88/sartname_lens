@@ -1,0 +1,1 @@
+export default function AmendmentsPage(){return <div className="mx-auto max-w-[1250px] px-8 py-10"><p className="eyebrow">Zeyiller</p><h1 className="mt-1 text-2xl font-extrabold">Zeyil taslakları hazırlanıyor</h1><p className="mt-2 text-sm text-[#667085]">Bu görünüm gelecekte evidence-backed Amendment Candidate sonuçlarını gösterecek.</p></div>}

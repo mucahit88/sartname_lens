@@ -1,0 +1,1 @@
+export default function ManualReviewPage(){return <div className="mx-auto max-w-[1250px] px-8 py-10"><p className="eyebrow">Manuel Kontrol</p><h1 className="mt-1 text-2xl font-extrabold">İnceleme kuyruğu hazırlanıyor</h1><p className="mt-2 text-sm text-[#667085]">Bu görünüm gelecekte Review Task ve kullanıcı kararlarını gösterecek.</p></div>}

@@ -1,0 +1,6 @@
+.vercel
+.next
+tsconfig.tsbuildinfo
+node_modules
+.env*
+!.env.example

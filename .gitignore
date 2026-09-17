@@ -4,3 +4,5 @@ tsconfig.tsbuildinfo
 node_modules
 .env*
 !.env.example
+/.artifact-work/
+/outputs/
